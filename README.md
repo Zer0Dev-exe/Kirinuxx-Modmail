@@ -1,18 +1,12 @@
-# [ModMail](https://modmail.phodit.xyz/)
+# ModMail
 
-ModMail is a Discord bot which main purpose is to provide user-to-moderator private communication.
-This bot needs to be hosted, as it is meant for a single Discord server.
+ModMail es un bot de Discord cuyo objetivo principal es proporcionar comunicación privada de usuario a moderador.
+Este bot debe estar alojado, ya que está destinado a un solo servidor Discord.
 
-**Documentation:** https://modmail.phodit.xyz/
-
-## How does it work?
+## Como funciona?
 
 When a user DMs the bot, a channel that only the staff can see is created in the server. From there, mods can discuss and reply to the conversation all within the same channel, getting some fancy logs when the thread is closed.
 
-## How do I setup the bot?
+## Comandos del bot?
 
-Please, read the documentaion at https://modmail.phodit.xyz/ and check the installation section.
-
-## What are the bot commands?
-
-You can check the commands [here](https://modmail.phodit.xyz/commands/).
+Puedes checkear los comandos usando prefix<help>
