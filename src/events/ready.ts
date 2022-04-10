@@ -23,5 +23,5 @@ export default async (caller: Mail): Promise<void> => {
 		}, 300000); // 5 minutes
 	}
 
-	console.log(`[BOT] ${caller.bot.user.username} is ready.`);
+	console.log(`[BOT] ${caller.bot.user.username} esta disponible.`);
 };
