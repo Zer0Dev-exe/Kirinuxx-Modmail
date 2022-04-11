@@ -18,31 +18,31 @@ export default new Command('set', async (caller, cmd, _log, config) => {
 \`category\`: la ID de la categoría donde quieres que abra los tickets
 \`logs\`: el ID a donde tengo que mandar los logs.
 \`status\`: cambia el estado del bot.
-\`status_type\`: change the displayed status type of your bot.
-\`notification\`: send the role ID you want to be mentioned on thread creation.
-\`account_age\`: the age an account needs to have in order to open a new thread.
-\`guild_age\`: the time an account needs to have been inside the server in order to open a new thread.
-\`guild_age_id\`: the server ID where someone needs to have the required **guild_age**.
-\`embed_creation_title\`: the title of the embed sent to the user when the thread is opened.
-\`embed_creation_thumbnail\`: the thumbnail of the embed sent to the user when the thread is opened ("none" to disable).
-\`embed_creation_description\`: the description of the embed sent to the user when the thread is opened.
-\`embed_creation_color\`: the color (hex code) of the embed sent to the user when the thread is opened.
-\`embed_creation_footer_text\`: the footer of the embed sent to the user when the thread is opened.
-\`embed_creation_footer_image\`: the footer image of the embed sent to the user when the thread is opened.
-\`embed_contact_title\`: the title of the embed sent to the user when the thread is created by a staff member.
-\`embed_contact_thumbnail\`: the thumbnail of the embed sent to the user when the thread is created by a staff member ("none" to disable).
-\`embed_contact_description\`: the description of the embed sent to the user when the thread is created by a staff member.
-\`embed_contact_color\`: the color (hex code) of the embed sent to the user when the thread is created by a staff member.
-\`embed_contact_footer_text\`: the footer of the embed sent to the user when the thread is created by a staff member.
-\`embed_contact_footer_image\`: the footer image of the embed sent to the user when the thread is created by a staff member.
-\`embed_closure_title\`: the title of the embed sent to the user when the thread is closed.
-\`embed_closure_thumbnail\`: the thumbnail of the embed sent to the user when the thread is closed ("none" to disable).
-\`embed_closure_description\`: the description of the embed sent to the user when the thread is closed.
-\`embed_closure_color\`: the color (hex code) of the embed sent to the user when the thread is closed.
-\`embed_closure_footer_text\`: the footer of the embed sent to the user when the thread is closed.
-\`embed_closure_footer_image\`: the footer image of the embed sent to the user when the thread is closed.
-\`embed_staff_title\`: the title of the embed sent to the staff when the thread is opened.
-\`embed_staff_color\`: the color (hex code) of the embed sent to the staff when the thread is opened.`)
+\`status_type\`: cambia el tiop de estado del bot.
+\`notification\`: cambia el ID del rol a la que quieres mencionar al abrir un ticket.
+\`account_age\`: cambia la edad minima de la cuenta para poder abrir los tickets.
+\`guild_age\`: cambia el minimo tiemop que debe de tener cuenta en el servidor para poder abrir los tickets.
+\`guild_age_id\`: ID del servidor donde pide tener una minima edad.
+\`embed_creation_title\`: el titulo del embed enviado al usuario cuando un ticket ha sido abierto.
+\`embed_creation_thumbnail\`: el thumbnail del embed enviado al usuario cuando un ticket ha sido abierto ("none" para desabilitar).
+\`embed_creation_description\`: la descripción del embed enviado al usuario cuando un ticket ha sido abierto.
+\`embed_creation_color\`: el color (dex) del embed enviado al usuario cuando un ticket ha sido abierto.
+\`embed_creation_footer_text\`: el pie de embed enviado al usuario cuando un ticket ha sido abierto.
+\`embed_creation_footer_image\`: la imagen del footer embed enviado al usuario cuando un ticket ha sido abierto.
+\`embed_contact_title\`: el titulo del embed enviado al usuario cuando un ticket ha sido abierto por un staff.
+\`embed_contact_thumbnail\`: el thumbanail del embed enviado al usuario cuando un ticket ha sido abierto por un staff.("none" para desabilitar).
+\`embed_contact_description\`: la descripción del embed enviado al usuario cuando un ticket ha sido abierto por un staff.
+\`embed_contact_color\`: el color del embed enviado al usuario cuando un ticket ha sido abierto por un staff.
+\`embed_contact_footer_text\`: el footer del embed enviado al usuario cuando un ticket ha sido abierto por un staff.
+\`embed_contact_footer_image\`: la imagen footer del embed enviado al usuario cuando un ticket ha sido abierto por un staff.
+\`embed_closure_title\`: el titulo del embed enviado al usuario cuando un ticket ha sido cerrado.
+\`embed_closure_thumbnail\`: el thumbnail footer del embed enviado al usuario cuando un ticket ha sido cerrado ("none" para desabilitar).
+\`embed_closure_description\`: la descripción del embed enviado al usuario cuando un ticket ha sido cerrado.
+\`embed_closure_color\`: el color del embed enviado al usuario cuando un ticket ha sido cerrado.
+\`embed_closure_footer_text\`: el texto del footer del embed enviado al usuario cuando un ticket ha sido cerrado.
+\`embed_closure_footer_image\`: el footer image del embed enviado al usuario cuando un ticket ha sido cerrado.
+\`embed_staff_title\`: el titulo mostrado en el canal de staff al abrir el ticket.
+\`embed_staff_color\`: el color hex del embed enviado al canal de staff.`)
 		.addField('Usage', `${config.prefix}set {parameter} {value}`);
 
 	if (!cmd.args[0]) return caller.utils.discord.createMessage(cmd.channel.id, { embed: invalidArgsEmbed.code });
@@ -71,7 +71,7 @@ export default new Command('set', async (caller, cmd, _log, config) => {
 			caller.bot.editSelf({ username: cmd.args.slice(1).join(' ') }).catch(() => {
 				return caller.utils.discord.createMessage(cmd.channel.id, 'Something went wrong.');
 			} );
-			caller.utils.discord.createMessage(cmd.channel.id, 'Username edited.');
+			caller.utils.discord.createMessage(cmd.channel.id, 'Nombre de usuario editado.');
 			break;
 
 		case 'prefix':
@@ -79,7 +79,7 @@ export default new Command('set', async (caller, cmd, _log, config) => {
 				return caller.utils.discord.createMessage(cmd.channel.id, 'The prefix cannot be over 4 characters.');
 			updated = await caller.db.updateConfig('prefix', cmd.args[1]);
 			if (updated)
-				return caller.utils.discord.createMessage(cmd.channel.id, 'The prefix has been changed.');
+				return caller.utils.discord.createMessage(cmd.channel.id, 'Prefix editado.');
 			if (!updated)
 				return caller.utils.discord.createMessage(cmd.channel.id, 'The prefix could not be updated.');
 			break;
