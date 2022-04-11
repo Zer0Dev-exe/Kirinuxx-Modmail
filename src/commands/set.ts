@@ -12,12 +12,12 @@ export default new Command('set', async (caller, cmd, _log, config) => {
 		.setColor(COLORS.GREEN)
 		.setThumbnail(cmd.channel.guild.dynamicIconURL())
 		.setDescription(`
-\`avatar\`: attach an image to change the bot avatar.
-\`username\`: change the bot username, not the nickname.
-\`prefix\`: change the bot prefix (max length: 4).
-\`category\`: send the ID of the category where you want new threads to open.
-\`logs\`: send the ID of the channel where you want your logs to go to.
-\`status\`: change the displayed status of your bot.
+\`avatar\`: cambia la imagen actual del bot.
+\`username\`: cambiar el nombre de usuario del bot, no el apodo.
+\`prefix\`: actualiza el prefix del bot (maximas lineas: 4).
+\`category\`: la ID de la categoría donde quieres que abra los tickets
+\`logs\`: el ID a donde tengo que mandar los logs.
+\`status\`: cambia el estado del bot.
 \`status_type\`: change the displayed status type of your bot.
 \`notification\`: send the role ID you want to be mentioned on thread creation.
 \`account_age\`: the age an account needs to have in order to open a new thread.
