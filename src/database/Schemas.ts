@@ -198,7 +198,7 @@ const config = new Schema({
 			title: {
 				type: String,
 				required: true,
-				default: 'Thread Opened',
+				default: 'Ticket abierto',
 				maxlength: 256
 			},
 			thumbnail: {
@@ -207,13 +207,13 @@ const config = new Schema({
 			description: {
 				type: String,
 				required: true,
-				default: 'Thank you for contacting the support team, we will reply to you as soon as possible.',
+				default: 'Gracias por abrir un ticket, ahora te atenderémos.',
 				maxlength: 2048
 			},
 			footer: {
 				type: String,
 				required: true,
-				default: 'Please be patient.',
+				default: 'Porfavor se paciente.',
 				maxlength: 2048
 			},
 			footerImageURL: {
@@ -229,7 +229,7 @@ const config = new Schema({
 			title: {
 				type: String,
 				required: true,
-				default: 'Thread Opened',
+				default: 'Ticket abierto',
 				maxlength: 256
 			},
 			thumbnail: {
@@ -238,13 +238,13 @@ const config = new Schema({
 			description: {
 				type: String,
 				required: true,
-				default: 'A member from the staff team of the server has contacted you.',
+				default: 'Un miembro del staff te ha contactado.',
 				maxlength: 2048
 			},
 			footer: {
 				type: String,
 				required: true,
-				default: 'You will receive a message soon.',
+				default: 'Pronto te contestarán.',
 				maxlength: 2048
 			},
 			footerImageURL: {

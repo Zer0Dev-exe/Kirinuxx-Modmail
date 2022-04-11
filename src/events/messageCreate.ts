@@ -159,7 +159,7 @@ export default async (caller: Mail, msg: Message): Promise<unknown> => {
 
 			channelMessage = await caller.utils.discord.createMessage(channel.id, { content: content, embed: guildEmbed.code }, false, files);
 			if (!channelMessage)
-				return caller.utils.discord.createMessage(msg.author.id, 'Could not send your message to the staff.', true);
+				return caller.utils.discord.createMessage(msg.author.id, 'Mensaje no enviado al staff, error.', true);
 			msg.addReaction('✅').catch(() => false);
 
 			// Remove schedules if any.
@@ -168,8 +168,8 @@ export default async (caller: Mail, msg: Message): Promise<unknown> => {
 				caller.db.updateLog(log._id, 'scheduledClosure', '', 'UNSET');
 				caller.db.updateLog(log._id, 'closer', '', 'UNSET');
 				const closureCancellationEmbed = new MessageEmbed()
-					.setTitle('Closure Cancelled')
-					.setDescription('This ticket will no longer be closed due to ticket activity.')
+					.setTitle('Cancelado el cierre')
+					.setDescription('Este ticket no será cerrado dado a que aún hay actividad.')
 					.setColor(COLORS.YELLOW);
 				caller.utils.discord.createMessage(channel.id, { embed: closureCancellationEmbed.code });
 			}
