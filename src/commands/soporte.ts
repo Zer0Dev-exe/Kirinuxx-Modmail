@@ -12,7 +12,7 @@ export default new Command('soporte', async (caller, cmd) => {
 	return caller.utils.discord.createMessage(cmd.channel.id, { embed: helpEmbed.code });
 },
 {
-	level: 'REGULAR',
+	level: 'ADMIN',
 	aliases: []
 });
 
