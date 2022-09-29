@@ -21,7 +21,7 @@ export default new Command('areply', async (caller, cmd, log) => {
 	const channelEmbed = new MessageEmbed()
 		.setAuthor('Respuesta del Staff:', cmd.channel.guild.dynamicIconURL())
 		.setColor(COLORS.GREEN)
-		.setDescription(cmd.args.join(' ') || 'No hay contenido de mensaje.')
+		.setDescription(cmd.args.join(' ') || 'No hay contenido de mensaje. Testeo')
 		.setTimestamp();
 
 	const guildMsg = await caller.utils.discord.createMessage(cmd.channel.id, { embed: channelEmbed.code }, false, files);
